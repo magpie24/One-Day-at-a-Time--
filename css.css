@@ -1,0 +1,352 @@
+/* Global Settings */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --text: #000000;
+  --logoO: #EF4040;
+  --logoY: #FFA732;
+  --accent: #C21292;
+}
+
+body{
+  background-color: white;
+  background-image: url(img/background.png);
+  background-position: center;
+
+  scroll-behavior: smooth;
+}
+
+
+/* one day at a time */
+.logo {
+  font-family: 'Khand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--logoO) 0%, var(--logoY) 78.47%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 1%;
+}
+
+.logoimg {
+  width: auto;
+  height: 25px;
+  top: 0;
+  left: 0;
+}
+
+.logoimgxs{
+  text-align: center;
+  width: auto;
+  height: 30px;
+}
+
+
+/* Motivation of Today */
+.title{
+  text-align: center;
+  font-family: 'Josefin Sans';
+  font-size: 56px;
+  color: var(--text);
+
+  margin-top: 2%;
+}
+
+/* Current Date */
+#currentDateDisplay{
+  text-align: center;
+  font-family: 'Josefin Sans';
+  color: var(--accent);
+}
+
+/* Motivation Card */
+#card{
+  width: 560px;
+  height: 380px;
+  background-color: var(--text);
+  border-radius: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote{
+  font-family: 'Khand';
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: auto;
+}
+
+.author{
+  font-family: 'Khand';
+  color: white;
+  text-align: center;
+  margin-bottom: auto;
+}
+
+/* Buttons */
+
+/* Button Holder */
+.buttonholder{
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Download Button */
+#downloadBtn{
+  font-family: 'Josefin Sans';
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+
+  background-color: white;
+  border-color: var(--accent);
+  border-radius: 8px;
+  border-style: line;
+  border-width: 3px;
+
+  padding: 3px 10px;
+  margin: 11px;
+  cursor: pointer;
+}
+
+/* Share Button */
+
+.toggle_button{
+	height: 40px;
+  width: 135px;
+	background: white;
+  font-family: 'Josefin Sans';
+  margin: 10px;
+
+	border-radius: 8px;
+  border-color: var(--accent);
+  border-width: 3px;
+
+	overflow: hidden;
+	transition: all 0.2s ease;
+}
+
+.toggle_button ul li a{
+	display: flex;
+	align-items: center;
+	height: 40px;
+	padding: 0 18px;
+  text-decoration: none;
+}
+
+.toggle_button ul li a.share_btn{
+	justify-content: left;
+	cursor: pointer;
+}
+
+.toggle_button ul li a.share_btn .text{
+	font-size: 20px;
+    color: var(--accent);
+    margin-left: 8px;
+    font-family: 'Josefin Sans';
+}
+
+.toggle_button ul li a.share_btn .icon{
+	width: 22px;
+	height: 22px;
+  margin: 0 0 3px 0;
+	background: var(--accent);
+	display: inline-block;
+	border-radius: 50%;
+	position: relative;
+	transition: all 1s ease;
+}
+
+/* Social Media Icons */
+.toggle_button ul li a .icon i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+}
+
+.toggle_button ul li a.sm .icon{
+	position: relative;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	margin-right: 8px;
+}
+
+.toggle_button ul li a.facebook .icon{
+	background: #3b5998;
+}
+
+.toggle_button ul li a.facebook .text{
+	color: #3b5998;
+}
+
+.toggle_button ul li a.twitter .icon{
+	background: black;
+}
+
+.toggle_button ul li a.twitter .text{
+	color: black;
+}
+
+.toggle_button ul li a.instagram .icon{
+	background: #0e76a8;
+}
+
+.toggle_button ul li a.instagram .text{
+	color: #0e76a8;
+}
+
+/* Share Button Active */
+.toggle_button.active{
+	height: 180px;
+}
+
+.toggle_button.active ul li a.share_btn .icon{
+	transform: rotate(45deg);
+}
+
+.toggle_button ul li a.sm{
+	visibility: hidden;
+}
+
+.toggle_button.active ul li a.sm {
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+/* Footer */
+
+.footer{
+  background-color: white;
+  text-align: center;
+  font-family: 'Josefin Sans';
+
+  margin-top: 10%;
+}
+
+
+.line{
+  width: 100vw;
+  height: 4px;
+  background: linear-gradient(90deg, var(--logoO) 0%, var(--logoY) 78.47%);
+
+  display: none;
+  margin-top: 6%;
+}
+
+.logof{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  display: block;
+
+  width: 63px;
+  height: 60px;
+}
+
+.desctext{
+  margin-top: 3%;
+}
+
+.power{
+  margin-top: 3%;
+}
+
+.me{
+  text-decoration: none;
+  font-weight: 800;
+  background: linear-gradient(180deg, var(--logoO) 0%, var(--logoY) 78.47%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.copy{
+  margin-top: 5%;
+  margin-bottom: 2%;
+
+  font-size: 14px;
+}
+
+.copy a{
+  color: #000000;
+  text-decoration: none;
+}
+
+/* MEDIA SCREEN */
+
+@media only screen and (max-width: 640px) {
+  body{
+    background-image: url(img/backgroundm.png);
+    background-size: cover;
+  }
+
+
+  .logo{
+    font-size: 24px;
+  }
+  
+  .logo img{
+    height: 20px;
+  }
+  
+  .title{
+    font-size: 42px;
+    margin-top: 20%;
+    padding: 5px;
+  }
+
+  #currentDateDisplay{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  #card{
+    width: 85vw;
+    height: 80vw;
+    margin-top: 15%;
+  }
+
+  .quote{
+    font-size: 28px;
+  }
+
+  .footer{
+    margin-top: 30%;
+    padding: 20px;
+    background-color: transparent;
+  }
+
+  .logof{
+    margin-bottom: 40px;
+  }
+
+}

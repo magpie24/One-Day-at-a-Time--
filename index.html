@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>One Day at a Time</title>
+
+    <!-- Meta Tags -->
+    <meta property=”og:type” content=”website”/>
+    <meta property="og:image" content="https://onedayatatime.magdalenapietras.dk/img/poster.png"/>
+    <meta property="og:title" content="One Day at a Time - Motivation Every Day"/>
+    <meta property="og:description" content="Motivation Every Day. Get inspired and empowered by motivational quotes, slogans and images. You got this!"/>
+    <meta property="og:url" content="https://onedayatatime.magdalenapietras.dk/"/>
+
+    <meta name="author" content="Magdalena Pietras">
+    <meta name="description" content="Motivation Every Day. Get inspired and empowered. We all need some support and kick off from time to time. One Day at a Time will give you all.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+
+    <!-- Font Awesome Cdn & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Fraunces:opsz,wght@9..144,600&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Fraunces:opsz,wght@9..144,600&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Khand:wght@300;400;500;600;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Html2Canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Facebook SKD -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="YOUR_NONCE_VALUE"></script>
+
+    <!-- LinkedIn SKD -->
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+</head>
+
+<body>
+    <!-- Logo - One Day at a Time -->
+    <div class="logo"><img class="logoimg" src="img/logo.png" alt="Mountain Motivation Logo">ONE DAY AT A TIME</div>
+
+    <!-- Title -->
+    <h1 class="title">Motivation of Today</h1>
+
+    <!-- Current Date -->
+    <h2 id="currentDateDisplay"></h2>
+
+    <!-- Motivation Card -->
+    <div id="card">
+        <h3 id="chquote" class="quote"></h3>
+        <p id="chauthor" class="author"></p>
+        <div class="logoXS"><img class="logoimgxs" src="img/logoxs.png" alt="One Day at a Time Logo"></div>
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="buttonholder">
+
+    <div class="wrapper">    
+    <button id="downloadBtn"><i class="fa-solid fa-download"></i> Download</button>
+    </div>
+
+    <div class="wrapper">
+		<button class="toggle_button">
+			<ul>
+				<li>
+					<a class="share_btn">
+                        <span class="icon"><i class="fas fa-plus"></i></span>
+						<span class="text">Share</span>
+		
+					</a>
+				</li>
+				<li>
+					<a href="#" class="sm facebook" id="facebook">
+						<span class="icon">
+							<i class="fab fa-facebook-f"></i>
+						</span>
+						<span class="text">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="sm twitter" id="x">
+						<span class="icon">
+							<i class="fa-brands fa-x-twitter"></i>
+						</span>
+						<span class="text">X</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="sm instagram" onclick="linkedin()">
+						<span class="icon">
+							<i class="fab fa-linkedin"></i>
+						</span>
+						<span class="text">Linkedin</span>
+					</a>
+				</li>
+			</ul>
+		</button>
+	</div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+    <div class="line"></div>
+
+    <img class="logof" src="img/logo.png" alt="One Day at a Time Logo">
+
+    <p class="desctext">Motivation Every Day<br>
+    </br>
+    <strong>strength. inspiration. power.</strong></p>
+
+    <p class="power">Powered by <a class="me" href="https://www.linkedin.com/in/magdalena-pietra%C5%9B-7a6389237/" target="_blank">Magdalena Pietras</a></p>
+
+    <p class="copy">Copyright 2024 &copy; <b>One Day at a Time</b> | <a href="Credits One Day at a Time.pdf">Credits</a></p>    
+
+    </div>    
+
+    <!-- JavaScript -->
+    <script>
+
+    // Current Date
+        function getCurrentDate() {
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = months[currentDate.getMonth()];
+            var year = currentDate.getFullYear();
+            return day + " " + month + " " + year;
+        }
+
+        var currentDate = getCurrentDate();
+        document.getElementById("currentDateDisplay").textContent = currentDate;
+
+    // Download class as img
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Remove border-radius style from the card temporarily
+    var card = document.getElementById('card');
+    var originalBorderRadius = card.style.borderRadius;
+    card.style.borderRadius = '0';
+
+    html2canvas(card).then(function(canvas) {
+        // Restore original border-radius style after capturing
+        card.style.borderRadius = originalBorderRadius;
+
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'card.png';
+        link.click();
+    });
+});
+
+// Toggle Share Button
+
+var share_btn = document.querySelector(".share_btn");
+	var toggle_button = document.querySelector(".toggle_button");
+
+	share_btn.addEventListener("click", function(){
+		toggle_button.classList.toggle("active");
+	})
+
+// Share on Facebook
+
+document.getElementById('facebook').addEventListener('click', function() {
+    FB.ui({
+        method: 'share',
+        href: 'https://onedayatatime.magdalenapietras.dk/',
+    }, function(response){});
+});
+
+// Share on LinkedIn
+
+function linkedin() {
+    var url = encodeURIComponent('https://onedayatatime.magdalenapietras.dk/');
+    var title = encodeURIComponent('Motivation Every Day');
+    var summary = encodeURIComponent('Check this out! So inspiring!');
+    const msg = encodeURIComponent('Check this out! So inspiring!');
+    var source = encodeURIComponent('One Day at a Time');
+    
+    var linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=' + url + '&title=' + title + '&summary=' + summary + '&source=' + source;
+    
+    window.open(linkedinShareUrl, '_blank');
+}
+
+// Share on X
+
+document.getElementById('x').addEventListener('click', function() {
+    var url = encodeURIComponent(window.location.href);
+    var text = encodeURIComponent('Check this out! So inspiring!');
+    var hashtags = encodeURIComponent('motivation, onedayatatime'); 
+    
+    var twitterShareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    
+    if (hashtags) {
+        twitterShareUrl += '&hashtags=' + hashtags;
+    }
+    
+    window.open(twitterShareUrl, '_blank');
+});
+
+// Automatic Change of Quote
+
+// Define an array of objects, each containing text and author for each day
+const dailyContent = [
+    { text: "Beat me, hate me <br> You can never break me <br> Will me, thrill me <br> You can never kill me", author: "Michael Jackson" },
+    { text: "You own it, <br> you better never let it go <br> You only get one shot, <br> do not miss your chance to blow", author: "Eminem - Lose Yourself" },
+    { text: "Succes is not final <br> Failure is not fatal <br> It is the courage to continue that counts", author: "Winstons S. Churchill" },
+    { text: "Don’t let yesterday <br> take up too much of today.", author: "Will Rogers" },
+    { text: "A ship in a habour is safe,<br> but that is not what<br> ships are built for.", author: "John A. Shedd" },
+    { text: "The real risk <br> is doing nothing", author: "Denis Waitley" },
+    { text: "Getting lost along your path<br> is a part of finding the path<br> you're meant to be on", author: "Robin S. Sharma" },
+    { text: "They did not know<br> it was impossible<br> so they did it", author: "Mark Twain" },
+    { text: "Sometimes you have to take<br> two steps back<br> to take ten forward<br>", author: "Nipsey Hussle" },
+    { text: "Think of yourself as dead.<br> You have lived your life.<br> Now take what's left and live it properly", author: "Marcus Aurelius" },
+];
+
+// Get the current date
+const currentDate2 = new Date();
+
+// Get the day of the month 
+const dayOfMonth = currentDate2.getDate();
+
+// Use modulo to cycle through daily content based on the day of the month
+const contentIndex = (dayOfMonth - 1) % dailyContent.length;
+
+// Display the text and author for today
+const dailyTextElement = document.getElementById("chquote");
+dailyTextElement.innerHTML = dailyContent[contentIndex].text;
+
+const dailyAuthorElement = document.getElementById("chauthor");
+dailyAuthorElement.textContent = "- " + dailyContent[contentIndex].author;
+
+
+    </script>
+</body>
+</html>
